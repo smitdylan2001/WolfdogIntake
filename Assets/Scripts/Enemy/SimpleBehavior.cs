@@ -7,6 +7,7 @@ public class SimpleBehavior : MonoBehaviour
 {
     [SerializeField] private Transform[] _patrolPoints;
     [SerializeField] private LayerMask _layerMask;
+    [SerializeField] private GameObject _bucket;
 
     private int _currentDestination = 0;
     private int _getNextDestination
@@ -27,6 +28,8 @@ public class SimpleBehavior : MonoBehaviour
 
     NavMeshAgent _navMeshAgent;
     private AIStates _currentState;
+    private bool _StartedCoroutine = false;
+
     private enum AIStates
 	{
         patrol,
@@ -138,7 +141,7 @@ public class SimpleBehavior : MonoBehaviour
             // Makes enemy stop and run the RemoveVisionBlocker coroutine
             case (AIStates.blinded):
                 _navMeshAgent.isStopped = true;
-                StartCoroutine(RemoveVisionBlocker(hitObject));
+                if(!_StartedCoroutine) StartCoroutine(RemoveVisionBlocker(hitObject));
                 break;
 
             // Throws error when the AI state isn't recognized
@@ -151,9 +154,11 @@ public class SimpleBehavior : MonoBehaviour
     // Remove bucket after 10 seconds and makes enemy patrol again
     private IEnumerator RemoveVisionBlocker(GameObject visionBlocker)
 	{
+        _StartedCoroutine = false;
         yield return new WaitForSeconds(10f);
-        Destroy(visionBlocker);
+        Destroy(_bucket);
         SetState(AIStates.patrol);
+        _StartedCoroutine = true;
     }
 
     // Set AI state
