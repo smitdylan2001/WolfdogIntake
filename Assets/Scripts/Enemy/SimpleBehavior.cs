@@ -8,6 +8,7 @@ public class SimpleBehavior : MonoBehaviour
     [SerializeField] private Transform[] _patrolPoints;
     [SerializeField] private LayerMask _layerMask;
     [SerializeField] private GameObject _bucket;
+    [SerializeField] private GameObject _player;
 
     private int _currentDestination = 0;
     private int _getNextDestination
@@ -73,7 +74,7 @@ public class SimpleBehavior : MonoBehaviour
 	GameObject VisibleObject()
 	{
         // Get all objects in the surrounding
-        Collider[] targets = Physics.OverlapSphere(transform.position, 5);
+        Collider[] targets = Physics.OverlapSphere(transform.position, 10);
         
         foreach (Collider c in targets)
         {
@@ -92,7 +93,7 @@ public class SimpleBehavior : MonoBehaviour
             }
 
             // Check if enemy can see player
-            if (Vector3.Angle(transform.forward, direction) < 150 / 2)
+            if (Vector3.Angle(transform.forward, direction) < 140 / 2)
             {
                 float distance = Vector3.Distance(transform.position, target.position);
 
@@ -130,9 +131,9 @@ public class SimpleBehavior : MonoBehaviour
             case (AIStates.attack):
                 _navMeshAgent.isStopped = false;
                 _navMeshAgent.speed = _startingSpeed * 1.5f;
-                 _navMeshAgent.destination = hitObject.transform.position;
+                 _navMeshAgent.destination = _player.transform.position;
 
-                if(_navMeshAgent.remainingDistance < 0.3f)
+                if(_navMeshAgent.remainingDistance < 0.2f)
 				{
                     SceneManager.LoadScene(0);
 				}
