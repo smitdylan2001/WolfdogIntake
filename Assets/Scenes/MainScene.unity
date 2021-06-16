@@ -863,7 +863,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1536
   _bucket: {fileID: 0}
-  _player: {fileID: 0}
+  _player: {fileID: 214183376}
 --- !u!23 &213691451
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -913,6 +913,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 213691446}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &214183376 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2093207351254691191, guid: 4ac7df741a9c0a2418ec19477729ee3d,
+    type: 3}
+  m_PrefabInstance: {fileID: 232788030}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &232788030
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1328,7 +1334,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1536
   _bucket: {fileID: 447520857}
-  _player: {fileID: 0}
+  _player: {fileID: 214183376}
 --- !u!23 &286238740
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1974,7 +1980,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1536
   _bucket: {fileID: 1292852312086165593}
-  _player: {fileID: 0}
+  _player: {fileID: 214183376}
 --- !u!23 &503704347
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2475,7 +2481,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1536
   _bucket: {fileID: 1599301147}
-  _player: {fileID: 0}
+  _player: {fileID: 214183376}
 --- !u!23 &725604945
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3702,7 +3708,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1536
   _bucket: {fileID: 1628960519}
-  _player: {fileID: 0}
+  _player: {fileID: 214183376}
 --- !u!23 &1189686090
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5656,7 +5662,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1536
   _bucket: {fileID: 1047481428}
-  _player: {fileID: 0}
+  _player: {fileID: 214183376}
 --- !u!23 &1886550767
 MeshRenderer:
   m_ObjectHideFlags: 0

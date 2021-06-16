@@ -133,7 +133,7 @@ public class SimpleBehavior : MonoBehaviour
                 _navMeshAgent.speed = _startingSpeed * 1.5f;
                  _navMeshAgent.destination = _player.transform.position;
 
-                if(_navMeshAgent.remainingDistance < 0.2f)
+                if(_navMeshAgent.remainingDistance < 0.3f)
 				{
                     SceneManager.LoadScene(0);
 				}
